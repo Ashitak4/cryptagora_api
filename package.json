@@ -1,0 +1,19 @@
+{
+  "name": "cryptagora_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongodb": "^3.0.3",
+    "mongoose": "^5.0.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.1"
+  }
+}
