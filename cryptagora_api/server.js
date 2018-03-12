@@ -2,25 +2,25 @@ var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000,
   mongoose = require('mongoose'),
-  Info = require('./Models/infoListModel'), //created model loading here
+  Info = require('./Models/poolModel'), //created model loading here
   bodyParser = require('body-parser');
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Infodb');
+mongoose.connect('mongodb://localhost/Datadb');
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
-var routes = require('./Routes/infoRoutes'); //importing route
+var routes = require('./Routes/poolRoutes'); //importing route
 routes(app); //register the route
 
 app.listen(port);
 
 
-console.log('InfosList RESTful API server started on: ' + port);
+console.log('Cryptagora RESTful API server started on: ' + port);
 
 app.use(function(req, res) {
   res.status(404).send({url: req.originalUrl + ' not found'})
